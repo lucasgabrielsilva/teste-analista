@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useState} from 'react';
+import { Redirect } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as Yup from 'yup';
@@ -16,11 +17,11 @@ function Cadastro2() {
     });
 
     const { register, handleSubmit, reset, errors } = useForm({resolver: yupResolver(schema)});
-    //const [validCEP, setValidCEP] = useState(false);
+    const [redirect, setRedirect] = useState(false);
 
     const onSubmit = (data) => {
-
         reset();
+        setRedirect(true);
     };
 
     const handleTesteTamanhoRG = (data) => {
@@ -59,10 +60,11 @@ function Cadastro2() {
                     {errors.comprovante?.message}
                     <DivButtons>
                         <Button ref={register} type={"reset"}> Limpar </Button>
-                        <Button ref={register} type={"submit"}> Próximo </Button>
+                        <Button ref={register} type={"submit"}> Finalizar </Button>
                     </DivButtons>
                 </Form>
             </Main>
+        {redirect ? (<Redirect to={"/"}/>) : null}
         </Container>
     );
 }
