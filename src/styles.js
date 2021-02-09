@@ -14,6 +14,17 @@ const globalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased !important;
     }
 
+    input{
+        ::before{
+            color: #002e54;
+            content: attr(placeholder) !important;
+        }
+        :focus::before{
+            content: '' !important;
+        }
+        border: none;
+    }
+
     button {
         cursor: pointer;
         border: none;
