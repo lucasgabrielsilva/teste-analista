@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as Yup from 'yup';
@@ -22,7 +22,7 @@ function Cadastro1() {
     });
 
     const { register, handleSubmit, reset, errors } = useForm({resolver: yupResolver(schema)});
-    const [validCEP, setValidCEP] = useState(false);
+   //const [validCEP, setValidCEP] = useState(false);
 
     const onSubmit = (data) => {
         console.log(data);
@@ -55,9 +55,9 @@ function Cadastro1() {
                     {errors.bairro?.message}
                     <Input ref={register} name={"cidade"} type={"text"} placeholder={"Cidade:"} disabled/>
                     {errors.cidade?.message}
-                    <Input ref={register} name={"numero"} type={"text"} placeholder={"Número:"} disabled={!validCEP}/>
+                    <Input ref={register} name={"numero"} type={"text"} placeholder={"Número:"} disabled/>
                     {errors.numero?.message}
-                    <Input ref={register} name={"complemento"} type={"text"} placeholder={"Complemento:"} disabled={!validCEP}/>
+                    <Input ref={register} name={"complemento"} type={"text"} placeholder={"Complemento:"} disabled/>
                     {errors.cep?.complemento}
                     <DivButtons>
                         <Button ref={register} type={"reset"}> Limpar </Button>

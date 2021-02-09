@@ -8,11 +8,6 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     background-color: inherit;
-
-    @media (max-width: 768px){
-        height: 100%;
-        width: 100%;
-    }
 `;
 
 const Header = styled.div`
@@ -44,7 +39,7 @@ const Main = styled.div`
     height: 75%;
     width: 95%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 `;
@@ -74,7 +69,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-    height: 50%;
+    height: 70%;
     font-size: 100%;
     border-radius: 6px;
     color: white;
@@ -101,16 +96,12 @@ const DivButtons = styled.div`
 `;
 
 const Form = styled.form`
-    height: 100%;
+    height: 70%;
     width: 100%;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-flow: column wrap;
+    justify-content: flex-start;
     align-items: center;
-
-    @media (max-width: 768px){
-        justify-content: space-evenly;
-    }
 `;
 
 export {
