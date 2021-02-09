@@ -7,7 +7,7 @@ import Cadastro2 from "./pages/cadastro2";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename={"/"}>
         <Switch>
             <Route component={SelectCurso} path= {"/"} exact />
             <Route component={Cadastro1} path= {"/cadastropart1"} exact />

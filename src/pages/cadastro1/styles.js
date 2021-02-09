@@ -67,7 +67,6 @@ const Input = styled.input`
     padding: 2px;
 
     @media (max-width: 768px){
-        height: 50px;
         width: 100%;
         margin: 2px;
     }
@@ -113,6 +112,18 @@ const Form = styled.form`
     }
 `;
 
+const Erro = styled.p`
+    height: 15px;
+    width: 45%;
+    font-size: 100%;
+    color: red;
+    background-color: inherit;
+
+    @media (max-width: 768px){
+        width: 100%;
+    }
+`;
+
 export {
     Container,
     Image,
@@ -123,5 +134,6 @@ export {
     DivTitle,
     DivButtons,
     Title,
-    Form
+    Form,
+    Erro
 };
