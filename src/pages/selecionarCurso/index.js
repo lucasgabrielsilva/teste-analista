@@ -15,7 +15,7 @@ function SelectCurso() {
     },[]);
 
     const getCEP = async () => {
-        Axios.get(process.env.Curso).then((response) => {
+        Axios.get('https://teste-analista.herokuapp.com/api/cursos').then((response) => {
             setTimeout(() => {
                 setCursos(response.data.data);
             }, 100);

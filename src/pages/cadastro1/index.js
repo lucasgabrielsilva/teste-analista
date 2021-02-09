@@ -35,7 +35,7 @@ function Cadastro1() {
     };
 
     const handleCheckCEP = async (data) => {
-        Axios.post(process.env.CEP,{"cep":`${data.target.value}`}).then((response) => {
+        Axios.post('https://teste-analista.herokuapp.com/api/checkcep',{"cep":`${data.target.value}`}).then((response) => {
             setTimeout(() => {
                 setValidCEP(true);
                 setEndereco(response.data.data);
